@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TYPECHECK — Speed Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">TYPECHECK</div>
+    <div class="tagline">benchmark your keystrokes</div>
+  </header>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-val" id="wpm">0</span>
+      <span class="stat-label">WPM</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-val" id="accuracy">100</span>
+      <span class="stat-label">ACC %</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-val" id="timer">60</span>
+      <span class="stat-label">SEC</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-val" id="errors">0</span>
+      <span class="stat-label">ERRORS</span>
+    </div>
+  </div>
+
+  <!-- MAIN TEST AREA -->
+  <main id="screen-test">
+    <div class="mode-selector">
+      <button class="mode-btn active" data-time="60">60s</button>
+      <button class="mode-btn" data-time="30">30s</button>
+      <button class="mode-btn" data-time="15">15s</button>
+    </div>
+
+    <div class="text-display" id="text-display"></div>
+
+    <input
+      type="text"
+      id="type-input"
+      class="type-input"
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="false"
+      placeholder="start typing to begin..."
+    />
+
+    <div class="hint">[ TAB ] restart &nbsp;·&nbsp; [ ESC ] reset</div>
+  </main>
+
+  <!-- RESULTS SCREEN -->
+  <div id="screen-results" class="hidden">
+    <div class="results-grid">
+      <div class="result-big">
+        <div class="result-num" id="res-wpm">0</div>
+        <div class="result-lbl">words per minute</div>
+      </div>
+      <div class="result-big">
+        <div class="result-num" id="res-acc">0</div>
+        <div class="result-lbl">accuracy</div>
+      </div>
+    </div>
+    <div class="results-detail">
+      <div class="detail-row">
+        <span>raw wpm</span><span id="res-raw">0</span>
+      </div>
+      <div class="detail-row">
+        <span>characters</span><span id="res-chars">0</span>
+      </div>
+      <div class="detail-row">
+        <span>errors</span><span id="res-errors">0</span>
+      </div>
+      <div class="detail-row">
+        <span>time</span><span id="res-time">0s</span>
+      </div>
+    </div>
+
+    <div class="results-rating" id="res-rating"></div>
+
+    <button class="restart-btn" id="btn-restart">[ RESTART ]</button>
+  </div>
+
+  <!-- SCAN LINE OVERLAY -->
+  <div class="scanlines"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
